@@ -1,6 +1,5 @@
 package com.timbuchalka.pg;
 
-import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.ContactsContract;
@@ -31,6 +30,9 @@ public class KnowMoreActivity extends AppCompatActivity implements View.OnClickL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.know_more_1);
 
+        TextView s = (TextView) findViewById(R.id.next_tv);
+        s.setOnClickListener(mOnClickListener);
+
 //        mTextView = (TextView) findViewById(R.id.know_more_1);
 //        mTextView.setText(R.string.know_more_intro);
 //
@@ -48,6 +50,7 @@ public class KnowMoreActivity extends AppCompatActivity implements View.OnClickL
 
     private View.OnClickListener mOnClickListener = new View.OnClickListener() {
         public void onClick(View v) {
+            Log.d(TAG, "onClick: sdfsdf");
 //            switch(currentLayout.getId()) {
 //                case R.id.know_more:
 //                    setContentView(R.layout.know_more_first);
