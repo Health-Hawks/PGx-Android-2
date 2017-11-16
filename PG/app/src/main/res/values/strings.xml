@@ -13,6 +13,10 @@
     <string name="know_more_1">Pharmacogenomics aims to predict how individual genetic variability impacts drug absorption, metabolism, and activity. While one treatment approach may work well for one individual, the same approach may not be effective or may cause adverse drug effects in other patients.</string>
     <string name="know_more_intro">The field of pharmacogenomics combines both pharmacology and genomics to develop safe and effective medications along with proper dosages that should be customized to variations in one’s genes.</string>
     <string name="know_more_third">How to use this clinical decision support tool</string>
+    <string name="did_you_know">* Humans are over 99% identical at the DNA level.</string>
+    <string name="did_you_2">* DNA mutations, which are any change in a DNA sequence away from normal, account
+    for this 1% difference</string>
+    <string name="did_you_3">* An individual has two alleles per gene</string>
 
     <string-array name="DosageSpinner">
 

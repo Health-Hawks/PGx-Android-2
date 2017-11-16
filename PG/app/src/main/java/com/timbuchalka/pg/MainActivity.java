@@ -2,6 +2,7 @@ package com.timbuchalka.pg;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -9,26 +10,96 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-
-import static com.timbuchalka.pg.R.id.btnKnow;
-import static com.timbuchalka.pg.R.id.btnStart;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "MainActivity";
 
+    public ConstraintLayout intro, intro2, intro3, intro4;
+    public View currentLayout;
+    public TextView mTextView;
+//    public final Button btnKnow = (Button) findViewById(R.id.btnKnow);
+//    public final Button btnStart = (Button) findViewById(R.id.btnStart);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        setContentView(R.layout.activity_know_more);
+        mTextView = (TextView) findViewById(R.id.intro_1);
+        mTextView.setText(R.string.know_more_intro);
 
-        Button btnKnow = (Button) findViewById(R.id.btnKnow);
-        Button btnStart = (Button) findViewById(R.id.btnStart);
+        intro = (ConstraintLayout) findViewById(R.id.intro);
+        intro2 = (ConstraintLayout) findViewById(R.id.intro2);
+        intro3 = (ConstraintLayout) findViewById(R.id.intro3);
+        intro4 = (ConstraintLayout) findViewById(R.id.intro4);
 
-        btnStart.setOnClickListener(this);
-        btnKnow.setOnClickListener(this);
+        currentLayout = findViewById(R.id.intro);
+
+        Log.d(TAG, "root view is " + currentLayout.getId() + " and " + R.id.intro);
+        currentLayout.setOnClickListener(mOnClickListener);
+
+//        Old Code
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.activity_main);
+//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
+//
+//        Button btnKnow = (Button) findViewById(R.id.btnKnow);
+//        Button btnStart = (Button) findViewById(R.id.btnStart);
+//
+//        btnStart.setOnClickListener(this);
+//        btnKnow.setOnClickListener(this);
     }
+
+    private View.OnClickListener mOnClickListener = new View.OnClickListener() {
+        public void onClick(View v) {
+            switch(currentLayout.getId()) {
+                case R.id.intro:
+                    setContentView(R.layout.know_more_first);
+                    mTextView = (TextView) findViewById(R.id.intro_1);
+                    mTextView.setText(R.string.know_more_1);
+                    currentLayout = findViewById(R.id.intro2);
+                    currentLayout.setOnClickListener(mOnClickListener);
+                    break;
+                case R.id.intro2:
+                    setContentView(R.layout.know_more_second);
+                    currentLayout = findViewById(R.id.intro3);
+                    currentLayout.setOnClickListener(mOnClickListener);
+                    break;
+                case R.id.intro3:
+                    setContentView(R.layout.know_more_third);
+                    mTextView = (TextView) findViewById(R.id.intro_1);
+                    mTextView.setText(com.timbuchalka.pg.R.string.know_more_third);
+                    currentLayout = findViewById(R.id.intro4);
+                    currentLayout.setOnClickListener(mOnClickListener);
+                    break;
+                case R.id.intro4:
+                    setContentView(R.layout.activity_main);
+                    currentLayout = findViewById(R.id.activity_main);
+                    Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+                    setSupportActionBar(toolbar);
+
+                    Button btnKnow = (Button) findViewById(R.id.btnKnow);
+                    Button btnStart = (Button) findViewById(R.id.btnStart);
+
+                    btnStart.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            startActivity(new Intent(MainActivity.this, GetStartedActivity.class));
+
+                        }
+                    });
+                    btnKnow.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            startActivity(new Intent(MainActivity.this, KnowMoreActivity.class));
+                        }
+                    });
+
+                    break;
+            }
+        }
+    };
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -59,17 +130,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         Intent intent = null;
 
-        switch(v.getId()) {
-            case btnKnow:
-                startActivity(new Intent(this, KnowMoreActivity.class));
-                Log.d(TAG, "onClick: =============================jjjj");
-                break;
-            case btnStart:
-                startActivity(new Intent(this, GetStartedActivity.class));
-                break;
-
-            default:
-        }
+//        switch(v.getId()) {
+//            case btnKnow:
+//                startActivity(new Intent(this, KnowMoreActivity.class));
+//                Log.d(TAG, "onClick: =============================jjjj");
+//                break;
+//            case btnStart:
+//                startActivity(new Intent(this, GetStartedActivity.class));
+//                break;
+//
+//            default:
+//        }
 
     }
 

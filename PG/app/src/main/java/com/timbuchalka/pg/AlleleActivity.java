@@ -358,8 +358,8 @@ public class AlleleActivity extends DosageCalculator {
                             case "*1S *1S":
                                 metabolizer.setText(normMet);
                                 recommendations.setText("Start with normal starting dose:\n" +
-                                        "Adult: 2.5 mg/kg daily   (include drug calculator option with each dose)\n" +
-                                        "Pediatric: 1.25-2.5 mg/kg (50-70 mg/m2) daily\n" +
+                                        "* Adult: 2.5 mg/kg daily   (include drug calculator option with each dose)\n" +
+                                        "* Pediatric: 1.25-2.5 mg/kg (50-70 mg/m2) daily\n" +
                                         "Allow 2 weeks to reach steady state after each dose adjustment.\n");
                                 break;
                             case "*1 *2":
@@ -374,7 +374,7 @@ public class AlleleActivity extends DosageCalculator {
                             case "*1S *4":
                                 metabolizer.setText(intMet);
                                 recommendations.setText("Start with 30-70% reduction from normal starting dose:\n" +
-                                        "Adult: 0.75-1.75 mg/kg daily  (include drug calculator option with each dose)\n" +
+                                        "* Adult: 0.75-1.75 mg/kg daily  (include drug calculator option with each dose)\n" +
                                         "Pediatric: 0.375-1.75 mg/kg (15-49 mg/m2) daily\n" +
                                         "Allow 2-4 weeks to reach steady state after each dose adjustment. \n" +
                                         "In those who require a dosage reduction based on myelosuppression, the median dose may be ~40% lower \n");
@@ -386,8 +386,8 @@ public class AlleleActivity extends DosageCalculator {
                             case "*2 *4":
                                 metabolizer.setText(poorMet);
                                 recommendations.setText("For malignancy, reduce daily dose by 10-fold from normal starting dose and reduce frequency to thrice weekly instead of daily:\n" +
-                                        "Adult: 0.25 mg/kg Three Times Weekly (include drug calculator option with each dose)\n" +
-                                        "Pediatric: 0.125-0.25 mg/kg (5-7 mg/m2) Three Times Weekly\n" +
+                                        "* Adult: 0.25 mg/kg Three Times Weekly (include drug calculator option with each dose)\n" +
+                                        "* Pediatric: 0.125-0.25 mg/kg (5-7 mg/m2) Three Times Weekly\n" +
                                         "Allow 4-6 weeks to reach steady state after each dose adjustment. \n" +
                                         "For nonmalignant conditions, consider alternative nonthiopurine immunosuppressant therapy.\n");
                                 break;
@@ -402,7 +402,7 @@ public class AlleleActivity extends DosageCalculator {
                             case "*1S *1S":
                                 metabolizer.setText(normMet);
                                 recommendations.setText("Start with normal starting dose:\n" +
-                                        "Adult and Pediatric: 2 mg/kg/day  (include dosage calculator)\n" +
+                                        "* Adult and Pediatric: 2 mg/kg/day  (include dosage calculator)\n" +
                                         "Allow 2-4 weeks to reach steady state after each dose adjustment.\n" +
                                         "May cautiously increase to 3 mg/kg/day if no response after 4 weeks\n");
                                 break;
@@ -443,11 +443,11 @@ public class AlleleActivity extends DosageCalculator {
                                 metabolizer.setText(normMet);
                                 recommendations.setText("Start with normal starting dose:\n" +
                                         "Immunosuppressant/Kidney Transplantation  (include dosage calculator) \n" +
-                                        "Adult: 3-5 mg/kg/day\n" +
+                                        "* Adult: 3-5 mg/kg/day\n" +
                                         "Rheumatoid Arthritis\n" +
-                                        "Adult: 1 mg/kg/day\n" +
+                                        "* Adult: 1 mg/kg/day\n" +
                                         "Juvenile Idiopathic Arthritis \n" +
-                                        "Pediatric: 1 mg/kg/day\n");
+                                        "* Pediatric: 1 mg/kg/day\n");
                                 break;
                             case "*1 *2":
                             case "*1 *3A":
