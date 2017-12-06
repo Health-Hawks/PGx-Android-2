@@ -484,10 +484,17 @@ public class AlleleActivity extends DosageCalculator {
                                         "Juvenile Idiopathic Arthritis \n" +
                                         "Pediatric: 0.1 mg/kg Three Times Weekly\n" +
                                         "Allow 4-6 weeks to reach steady state after each dose adjustment. \n");
+                                break;
+                            default:
+                                recommendations.setText("Please select again.");
 
                         }
+//                    default:
+//                        recommendations.setText("Please select again.");
 
                 }
+//            default:
+//                recommendations.setText("Please select again.");
             }
 
         }

@@ -4,14 +4,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.support.constraint.ConstraintLayout;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Layout;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.Toolbar;
 
 import org.w3c.dom.Text;
@@ -30,8 +33,20 @@ public class KnowMoreActivity extends AppCompatActivity implements View.OnClickL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.know_more_1);
 
+        getSupportActionBar().hide();
+
         TextView s = (TextView) findViewById(R.id.next_tv);
         s.setOnClickListener(mOnClickListener);
+
+        Button genetics = (Button) findViewById(R.id.btn_genetics);
+        Button genomics = (Button) findViewById(R.id.btn_genomics);
+        Button genotype = (Button) findViewById(R.id.btn_genotype);
+        Button phenotype = (Button) findViewById(R.id.btn_phenotype);
+
+        genetics.setOnClickListener(defListener);
+        genomics.setOnClickListener(defListener);
+        genotype.setOnClickListener(defListener);
+        phenotype.setOnClickListener(defListener);
 
 //        mTextView = (TextView) findViewById(R.id.know_more_1);
 //        mTextView.setText(R.string.know_more_intro);
@@ -76,6 +91,54 @@ public class KnowMoreActivity extends AppCompatActivity implements View.OnClickL
 //                    currentLayout = findViewById(R.id.activity_main);
 //                    break;
 //            }
+        }
+    };
+
+    private View.OnClickListener defListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            switch (v.getId()) {
+                case R.id.btn_genetics:
+                    Snackbar.make(v, "Genetics: The study of a single gene and its impact on the individual",
+                            Snackbar.LENGTH_INDEFINITE)
+                            .setAction("Dismiss", new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+
+                                }
+                            }).show();
+                    break;
+                case R.id.btn_genomics:
+                    Snackbar.make(v, "Genomics: The study of all parts of the individual’s genome",
+                            Snackbar.LENGTH_INDEFINITE)
+                            .setAction("Dismiss", new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+
+                                }
+                            }).show();
+                    break;
+                case R.id.btn_genotype:
+                    Snackbar.make(v, "Genotype: The set of genes an individual carries.",
+                            Snackbar.LENGTH_INDEFINITE)
+                            .setAction("Dismiss", new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+
+                                }
+                            }).show();
+                    break;
+                case R.id.btn_phenotype:
+                    Snackbar.make(v, "Phenotype: The observable expression of one’s genes.",
+                            Snackbar.LENGTH_INDEFINITE)
+                            .setAction("Dismiss", new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+
+                                }
+                            }).show();
+                    break;
+            }
         }
     };
 

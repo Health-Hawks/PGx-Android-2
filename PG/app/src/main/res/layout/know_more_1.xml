@@ -93,7 +93,7 @@
         app:layout_constraintTop_toBottomOf="@+id/bullet3_tv"/>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn_genetics"
         android:layout_width="150dp"
         android:layout_height="55dp"
         android:layout_marginEnd="12dp"
@@ -108,7 +108,7 @@
         tools:textAllCaps="false"/>
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btn_genomics"
         android:layout_width="150dp"
         android:layout_height="60dp"
         android:layout_marginStart="12dp"
@@ -117,12 +117,12 @@
         android:textColor="@color/colorPrimary"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBaseline_toBaselineOf="@+id/button"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btn_genetics"
         app:layout_constraintStart_toStartOf="@+id/guideline8"
         tools:textAllCaps="false"/>
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/btn_phenotype"
         android:layout_width="150dp"
         android:layout_height="55dp"
         android:layout_marginStart="12dp"
@@ -131,12 +131,12 @@
         android:textColor="@color/colorPrimary"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBaseline_toBaselineOf="@+id/button5"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btn_genotype"
         app:layout_constraintStart_toStartOf="@+id/guideline8"
         tools:textAllCaps="false"/>
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/btn_genotype"
         android:layout_width="150dp"
         android:layout_height="55dp"
         android:layout_marginEnd="12dp"
@@ -147,7 +147,7 @@
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/guideline8"
-        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/btn_genetics"
         tools:textAllCaps="false"/>
 
     <android.support.constraint.Guideline

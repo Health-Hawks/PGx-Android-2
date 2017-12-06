@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
 import android.widget.Toast;
@@ -31,24 +32,35 @@ public class GetStartedActivity extends AppCompatActivity implements SpinnerAdap
                 R.array.gene_array, android.R.layout.simple_spinner_item);
         geneAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         geneSpinner.setAdapter(geneAdapter);
-        geneSpinner.setOnItemSelectedListener(this);
+//        geneSpinner.setOnItemSelectedListener(this);
 
 
         ArrayAdapter<CharSequence> drugAdapter = ArrayAdapter.createFromResource(this,
                 R.array.drugs_array, android.R.layout.simple_spinner_item);
         drugAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         drugSpinner.setAdapter(drugAdapter);
-        drugSpinner.setOnItemSelectedListener(this);
+//        drugSpinner.setOnItemSelectedListener(this);
+
+        Button btnDone = (Button) findViewById(R.id.btn_done1);
+        btnDone.setOnClickListener(mOnClickListener);
+
     }
+
+    private View.OnClickListener mOnClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(GetStartedActivity.this, DosingGuidelines.class);
+            intent.putExtra("drug", drugSpinner.getSelectedItem().toString());
+            intent.putExtra("gene", geneSpinner.getSelectedItem().toString());
+            startActivity(intent);
+        }
+    };
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
         if(!geneSpinner.getSelectedItem().toString().equals("Select gene") && !drugSpinner.getSelectedItem().toString().equals("Select drug") ) {
-            Intent intent = new Intent(GetStartedActivity.this, DosingGuidelines.class);
-            intent.putExtra("drug", drugSpinner.getSelectedItem().toString());
-            intent.putExtra("gene", geneSpinner.getSelectedItem().toString());
-            startActivity(intent);
+
 
         }
 
