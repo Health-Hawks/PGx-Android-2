@@ -3,14 +3,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/km8"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:layout_editor_absoluteY="25dp">
-
+    android:id="@+id/km9">
 
     <include
-        android:id="@+id/include2"
+        android:id="@+id/include3"
         layout="@layout/base_know_more"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -19,86 +17,65 @@
         app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
-        android:id="@+id/km8title"
+        android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:text="@string/km8title"
+        android:text="@string/km9title"
         android:textColor="@color/colorPrimary"
-        android:textSize="28dp"
+        android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/include2"/>
+        app:layout_constraintTop_toBottomOf="@+id/include3"/>
 
     <TextView
-        android:id="@+id/km8txt1"
+        android:id="@+id/textView14"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="@string/km8txt1"
+        android:text="@string/km9txt1"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/km8title"/>
+        app:layout_constraintTop_toBottomOf="@+id/textView9"/>
 
     <ImageView
-        android:id="@+id/km8img1"
+        android:id="@+id/imageView9"
         android:layout_width="0dp"
-        android:layout_height="100dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginStart="32dp"
+        android:layout_height="72dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/km8txt1"
-        app:srcCompat="@drawable/cpic1"/>
+        app:layout_constraintTop_toBottomOf="@+id/textView14"
+        app:srcCompat="@drawable/g2c2"/>
 
     <TextView
-        android:id="@+id/km8txt2"
+        android:id="@+id/textView15"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="@string/km8txt2"
+        android:text="@string/km9txt2"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/km8img1"/>
+        app:layout_constraintTop_toBottomOf="@+id/imageView9"/>
 
     <ImageView
-        android:id="@+id/km8img2"
-        android:layout_width="250dp"
-        android:layout_height="47dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/km8txt2"
-        app:srcCompat="@drawable/pharmgkb"/>
-
-    <ImageView
-        android:id="@+id/km8img3"
-        android:layout_width="80dp"
-        android:layout_height="50dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/km8img2"
-        app:srcCompat="@drawable/pgrn"/>
-
-    <TextView
-        android:id="@+id/textView13"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:id="@+id/imageView10"
+        android:layout_width="213dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="@string/km8txt3"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/km8img3"/>
-
+        app:layout_constraintTop_toBottomOf="@+id/textView15"
+        app:srcCompat="@drawable/ignite"/>
 </android.support.constraint.ConstraintLayout>

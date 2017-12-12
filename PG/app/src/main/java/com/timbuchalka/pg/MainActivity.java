@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public ConstraintLayout intro, intro2, intro3, intro4;
     public View currentLayout;
     public TextView mTextView;
+    public Toolbar mToolbar;
 //    public final Button btnKnow = (Button) findViewById(R.id.btnKnow);
 //    public final Button btnStart = (Button) findViewById(R.id.btnStart);
 
@@ -25,8 +26,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_know_more);
-        mTextView = (TextView) findViewById(R.id.intro_1);
-        mTextView.setText(R.string.know_more_intro);
+
+        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(mToolbar);
 
         intro = (ConstraintLayout) findViewById(R.id.intro);
         intro2 = (ConstraintLayout) findViewById(R.id.intro2);
@@ -56,28 +58,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             switch(currentLayout.getId()) {
                 case R.id.intro:
                     setContentView(R.layout.know_more_first);
-                    mTextView = (TextView) findViewById(R.id.intro_1);
-                    mTextView.setText(R.string.know_more_1);
+                    mToolbar = (Toolbar) findViewById(R.id.toolbar);
+                    setSupportActionBar(mToolbar);
                     currentLayout = findViewById(R.id.intro2);
                     currentLayout.setOnClickListener(mOnClickListener);
                     break;
                 case R.id.intro2:
                     setContentView(R.layout.know_more_second);
+                    mToolbar = (Toolbar) findViewById(R.id.toolbar);
+                    setSupportActionBar(mToolbar);
                     currentLayout = findViewById(R.id.intro3);
                     currentLayout.setOnClickListener(mOnClickListener);
                     break;
                 case R.id.intro3:
                     setContentView(R.layout.know_more_third);
-                    mTextView = (TextView) findViewById(R.id.intro_1);
-                    mTextView.setText(com.timbuchalka.pg.R.string.know_more_third);
+                    mToolbar = (Toolbar) findViewById(R.id.toolbar);
+                    setSupportActionBar(mToolbar);
                     currentLayout = findViewById(R.id.intro4);
                     currentLayout.setOnClickListener(mOnClickListener);
                     break;
                 case R.id.intro4:
                     setContentView(R.layout.activity_main);
                     currentLayout = findViewById(R.id.activity_main);
-                    Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-                    setSupportActionBar(toolbar);
+                    mToolbar = (Toolbar) findViewById(R.id.toolbar);
+                    setSupportActionBar(mToolbar);
 
                     Button btnKnow = (Button) findViewById(R.id.btnKnow);
                     Button btnStart = (Button) findViewById(R.id.btnStart);

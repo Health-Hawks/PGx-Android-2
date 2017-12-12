@@ -17,11 +17,112 @@
     <string name="did_you_2">* DNA mutations, which are any change in a DNA sequence away from normal, account
     for this 1% difference</string>
     <string name="did_you_3">* An individual has two alleles per gene</string>
-    <string name="km2txt">Did you know:  * Humans are over 99% identical at the DNA level. \n
-        * DNA mutations, which are any change in a DNA sequence away  from normal, account for this 1% difference  * An individual has two alleles per gene.</string>
+
     <string name="DYK">Did You Know:</string>
     <string name="km3title">Why Individuals May Respond  Differently to Medications</string>
+    <string name="km3txt">* Polymorphism is a type of DNA sequence
+                            variation that is common in a population.\n
+                            \n
+                            * There is no single gene that is regarded as
+                            standard, but in reality, there are two or more
+                            equally acceptable alternatives.\n
+                            \n
+                            * Several polymorphisms are largely
+                            responsible for the differences between
+                            how humans respond to drugs.\n
+                            \n
+                            * The most common type of polymorphism
+                            is called a single nucleotide polymorphism,
+                            or SNP (pronounced ‘snip’). An SNP
+                            results from a single change in a single
+                            nucleotide.\n
+                            \n
+                            * Other types of polymorphism include:
+                            more than one nucleotide change, an
+                            entire gene insertion or deletion, or
+                            ‘extra copies’ of a gene.
+                           </string>
+    <string name="km2txt1">* A pharmacogenetic test refers to the
+                                individual’s genetic test
+                    \n
+                    \n
+                    * The study of pharmacogenomics assesses
+                    all aspects of the genome to identify
+                    variations in the genome that impact drug
+                    metabolism and response.
+                    \n
+                    \n
+                    * Pharmacogenomics encompasses both
+                    inherited genome variations that affect the
+                    way we metabolize different drugs, as well
+                    as somatic variations of the tumor cell that
+                    can be used to guide treatment via tumor
+                    markers. These latter types of tests are
+                    referred to as Targeted Cancer Therapy.
+</string>
+    <string name="km4txt1">*Variations of one’s genetic profile can
+                            change the function of proteins that
+                            interact with a drug as well as the drug
+                            target.\n
+                            \n
+                            *Polymorphisms are generally
+                            categorized into four groups based on
+                            which alleles the individual carries:
+</string>
+    <string name="km4txt2">*Poor metabolizers (inhibitors)\n
+                            *Intermediate metabolizers\n
+                            *Extensive metabolizers (normal)\n
+                            *Ultra-rapid metabolizers (inducers)</string>
+    <string name="km5title">Types of Pharmacogenetic Tests</string>
+    <string name="km5txt1">* Drug-disposition: Genes can alter the
+                            pharmacokinetics of a drug</string>
+    <string name="km5txt2">-Pharmacokinetics is the study of
+                            the bodily absorption, distribution,
+                            metabolism, and excretion of drugs.
+                            </string>
+    <string name="km5txt3">* Drug-target: Genes can change the
+                                pharmacodynamics of a drug.
+                                </string>
+    <string name="km5txt4">-Pharmacodynamics is the study of
+                            the course of action, effect, and
+                            breakdown of drugs within the body.
+                            </string>
+    <string name="km6title">Parent/Active Drug vs. \n Pro Drug</string>
+    <string name="km6txt1">Parent/Active Drug: Formulated with the active form of the drug \n
+                            \n
+                            Pro Drug: Formulated in its inactive state and must be broken down by enzymes in
+                            the body to produce active metabolites.</string>
+    <string name="km7txt1">There are many different companies that offer clinically actionable
+                            pharmacogenetic tests to help providers target treatment  and medications based
+                            on the patient’s  genetics. \n
+                            \n
+                            Many of these tests are now covered by
+                            Medicaid/Medicare and private  insurance companies.</string>
+    <string name="km7title">Ordering a  Pharmacogenetic Test</string>
+    <string name="km7txt2">*This is not an exhaustive list, and no  endorsement of any company is given.</string>
+    <string name="km8txt1">*This information compiled within this application utilizes evidence-based guidelines published by the Clinical Pharmacogenetics Implementation Consortium (CPIC).</string>
+    <string name="km8txt2">*This is a project that culminated from a partnership between PharmGKB and  the Pharmacogenomics Research Network (PGRN).</string>
+    <string name="km8txt3">*CPIC publishes standardized,
+                            evidence-based, peer-reviewed,
+                            publicly available, non-profit gene/drug
+                            guidelines for how to use genomic
+                            data to perform prescribing.
+                            </string>
+    <string name="km8title">Evidence-Based Sources</string>
+    <string name="km9title">Educational Resources</string>
+    <string name="km9txt1"><b>Pharmacogenomics Education Program  (PharmGenEd™):</b> This is an evidence-based program for
+                            healthcare professional and  students that is designed to disseminate educational materials
+                            related to  pharmacogenomics.</string>
+    <string name="km9txt2"><b>Implementing GeNomics In PracTicE  (IGNITE): </b>This NIH-funded network is
+                            comprised of several different healthcare  and research sites that was initiated to find
+                            ways to incorporate genomic information  into the electronic medical record and
+                            create clinical decision support tools. This  network has created the SPARK Toolbox,
+                            which is a publicly available database for  genomic medicine resources for healthcare
+                            providers and researchers.</string>
+
+
     <string-array name="DosageSpinner">
+
 
         <item>Mg/Kg</item>
         <item>Mcg/Kg</item>
