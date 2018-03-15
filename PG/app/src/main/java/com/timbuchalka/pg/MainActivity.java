@@ -25,20 +25,37 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_know_more);
-
+        setContentView(R.layout.activity_main);
+        currentLayout = findViewById(R.id.activity_main);
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
 
-        intro = (ConstraintLayout) findViewById(R.id.intro);
-        intro2 = (ConstraintLayout) findViewById(R.id.intro2);
-        intro3 = (ConstraintLayout) findViewById(R.id.intro3);
-        intro4 = (ConstraintLayout) findViewById(R.id.intro4);
+        Button btnKnow = (Button) findViewById(R.id.btnKnow);
+        Button btnStart = (Button) findViewById(R.id.btnStart);
 
-        currentLayout = findViewById(R.id.intro);
+        btnStart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, GetStartedActivity.class));
 
-        Log.d(TAG, "root view is " + currentLayout.getId() + " and " + R.id.intro);
-        currentLayout.setOnClickListener(mOnClickListener);
+            }
+        });
+        btnKnow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, KnowMoreActivity.class));
+            }
+        });
+
+//        intro = (ConstraintLayout) findViewById(R.id.intro);
+//        intro2 = (ConstraintLayout) findViewById(R.id.intro2);
+//        intro3 = (ConstraintLayout) findViewById(R.id.intro3);
+//        intro4 = (ConstraintLayout) findViewById(R.id.intro4);
+//
+//        currentLayout = findViewById(R.id.intro);
+//
+//        Log.d(TAG, "root view is " + currentLayout.getId() + " and " + R.id.intro);
+//        currentLayout.setOnClickListener(mOnClickListener);
 
 //        Old Code
 //        super.onCreate(savedInstanceState);
@@ -56,49 +73,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private View.OnClickListener mOnClickListener = new View.OnClickListener() {
         public void onClick(View v) {
             switch(currentLayout.getId()) {
-                case R.id.intro:
-                    setContentView(R.layout.know_more_first);
-                    mToolbar = (Toolbar) findViewById(R.id.toolbar);
-                    setSupportActionBar(mToolbar);
-                    currentLayout = findViewById(R.id.intro2);
-                    currentLayout.setOnClickListener(mOnClickListener);
-                    break;
-                case R.id.intro2:
-                    setContentView(R.layout.know_more_second);
-                    mToolbar = (Toolbar) findViewById(R.id.toolbar);
-                    setSupportActionBar(mToolbar);
-                    currentLayout = findViewById(R.id.intro3);
-                    currentLayout.setOnClickListener(mOnClickListener);
-                    break;
-                case R.id.intro3:
-                    setContentView(R.layout.know_more_third);
-                    mToolbar = (Toolbar) findViewById(R.id.toolbar);
-                    setSupportActionBar(mToolbar);
-                    currentLayout = findViewById(R.id.intro4);
-                    currentLayout.setOnClickListener(mOnClickListener);
-                    break;
+
                 case R.id.intro4:
-                    setContentView(R.layout.activity_main);
-                    currentLayout = findViewById(R.id.activity_main);
-                    mToolbar = (Toolbar) findViewById(R.id.toolbar);
-                    setSupportActionBar(mToolbar);
 
-                    Button btnKnow = (Button) findViewById(R.id.btnKnow);
-                    Button btnStart = (Button) findViewById(R.id.btnStart);
-
-                    btnStart.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            startActivity(new Intent(MainActivity.this, GetStartedActivity.class));
-
-                        }
-                    });
-                    btnKnow.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            startActivity(new Intent(MainActivity.this, KnowMoreActivity.class));
-                        }
-                    });
 
                     break;
             }

@@ -1,9 +1,11 @@
 package com.timbuchalka.pg;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -15,29 +17,25 @@ public class KnowMoreActivity extends AppCompatActivity implements View.OnClickL
 
     public ConstraintLayout knowMore, knowMore1, knowMore2, knowMore3;
     public View currentLayout;
-    public TextView tvTitle, tvText, next;
+    public TextView tvTitle, tvText, next, rturn, back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.know_more_1);
+        setContentView(R.layout.activity_know_more);
 
         getSupportActionBar().hide();
 
+        currentLayout = (ConstraintLayout) findViewById(R.id.intro);
         next = (TextView) findViewById(R.id.next_tv);
         next.setOnClickListener(kOnClickListener);
 
-        Button genetics = (Button) findViewById(R.id.btn_genetics);
-        Button genomics = (Button) findViewById(R.id.btn_genomics);
-        Button genotype = (Button) findViewById(R.id.btn_genotype);
-        Button phenotype = (Button) findViewById(R.id.btn_phenotype);
+        rturn = (TextView) findViewById(R.id.return_tv);
+        rturn.setOnClickListener(rOnClickListener);
 
-        genetics.setOnClickListener(defListener);
-        genomics.setOnClickListener(defListener);
-        genotype.setOnClickListener(defListener);
-        phenotype.setOnClickListener(defListener);
-        currentLayout = (ConstraintLayout) findViewById(R.id.km1);
-        Log.d(TAG, "onCreate: current layout" + currentLayout.getId());
+        back = (TextView) findViewById(R.id.back_tv);
+        back.setOnClickListener(bOnClickListener);
+
 
 //        mTextView = (TextView) findViewById(R.id.know_more_1);
 //        mTextView.setText(R.string.know_more_intro);
@@ -54,15 +52,81 @@ public class KnowMoreActivity extends AppCompatActivity implements View.OnClickL
 
     }
 
+    private View.OnClickListener bOnClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+
+        }
+    };
+
+    private View.OnClickListener rOnClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            startActivity(new Intent(KnowMoreActivity.this, MainActivity.class));
+        }
+    };
+
     private View.OnClickListener kOnClickListener = new View.OnClickListener() {
         public void onClick(View v) {
             switch(currentLayout.getId()) {
+                case R.id.intro:
+                    setContentView(R.layout.know_more_first);
+                    getSupportActionBar().hide();
+                    next = (TextView) findViewById(R.id.next_tv);
+                    next.setOnClickListener(kOnClickListener);
+                    rturn = (TextView) findViewById(R.id.return_tv);
+                    rturn.setOnClickListener(rOnClickListener);
+                    currentLayout = findViewById(R.id.intro2);
+                    currentLayout.setOnClickListener(kOnClickListener);
+                    break;
+                case R.id.intro2:
+                    setContentView(R.layout.know_more_second);
+                    getSupportActionBar().hide();
+                    next = (TextView) findViewById(R.id.next_tv);
+                    next.setOnClickListener(kOnClickListener);
+                    rturn = (TextView) findViewById(R.id.return_tv);
+                    rturn.setOnClickListener(rOnClickListener);
+                    currentLayout = findViewById(R.id.intro3);
+                    currentLayout.setOnClickListener(kOnClickListener);
+                    break;
+                case R.id.intro3:
+                    setContentView(R.layout.know_more_third);
+                    getSupportActionBar().hide();
+                    next = (TextView) findViewById(R.id.next_tv);
+                    next.setOnClickListener(kOnClickListener);
+                    rturn = (TextView) findViewById(R.id.return_tv);
+                    rturn.setOnClickListener(rOnClickListener);
+                    currentLayout = findViewById(R.id.intro4);
+                    currentLayout.setOnClickListener(kOnClickListener);
+                    break;
+                case R.id.intro4:
+                    setContentView(R.layout.know_more_1);
+                    getSupportActionBar().hide();
+                    next = (TextView) findViewById(R.id.next_tv);
+                    next.setOnClickListener(kOnClickListener);
+                    rturn = (TextView) findViewById(R.id.return_tv);
+                    rturn.setOnClickListener(rOnClickListener);
+
+                    Button genetics = (Button) findViewById(R.id.btn_genetics);
+                    Button genomics = (Button) findViewById(R.id.btn_genomics);
+                    Button genotype = (Button) findViewById(R.id.btn_genotype);
+                    Button phenotype = (Button) findViewById(R.id.btn_phenotype);
+
+                    genetics.setOnClickListener(defListener);
+                    genomics.setOnClickListener(defListener);
+                    genotype.setOnClickListener(defListener);
+                    phenotype.setOnClickListener(defListener);
+
+                    currentLayout = findViewById(R.id.km1);
+                    currentLayout.setOnClickListener(kOnClickListener);
+                    break;
                 case R.id.km1:
                     setContentView(R.layout.know_more_2);
                     getSupportActionBar().hide();
                     next = (TextView) findViewById(R.id.next_tv);
-
                     next.setOnClickListener(kOnClickListener);
+                    rturn = (TextView) findViewById(R.id.return_tv);
+                    rturn.setOnClickListener(rOnClickListener);
                     currentLayout = findViewById(R.id.km2);
                     currentLayout.setOnClickListener(kOnClickListener);
                     break;
@@ -71,6 +135,8 @@ public class KnowMoreActivity extends AppCompatActivity implements View.OnClickL
                     getSupportActionBar().hide();
                     next = (TextView) findViewById(R.id.next_tv);
                     next.setOnClickListener(kOnClickListener);
+                    rturn = (TextView) findViewById(R.id.return_tv);
+                    rturn.setOnClickListener(rOnClickListener);
                     currentLayout = findViewById(R.id.km3);
                     currentLayout.setOnClickListener(kOnClickListener);
                     break;
@@ -80,6 +146,8 @@ public class KnowMoreActivity extends AppCompatActivity implements View.OnClickL
 
                     next = (TextView) findViewById(R.id.next_tv);
                     next.setOnClickListener(kOnClickListener);
+                    rturn = (TextView) findViewById(R.id.return_tv);
+                    rturn.setOnClickListener(rOnClickListener);
 
                     currentLayout = findViewById(R.id.km4);
                     currentLayout.setOnClickListener(kOnClickListener);
@@ -90,6 +158,8 @@ public class KnowMoreActivity extends AppCompatActivity implements View.OnClickL
 
                     next = (TextView) findViewById(R.id.next_tv);
                     next.setOnClickListener(kOnClickListener);
+                    rturn = (TextView) findViewById(R.id.return_tv);
+                    rturn.setOnClickListener(rOnClickListener);
 
                     currentLayout = findViewById(R.id.km5);
                     currentLayout.setOnClickListener(kOnClickListener);
@@ -100,6 +170,8 @@ public class KnowMoreActivity extends AppCompatActivity implements View.OnClickL
 
                     next = (TextView) findViewById(R.id.next_tv);
                     next.setOnClickListener(kOnClickListener);
+                    rturn = (TextView) findViewById(R.id.return_tv);
+                    rturn.setOnClickListener(rOnClickListener);
 
                     currentLayout = findViewById(R.id.km6);
                     currentLayout.setOnClickListener(kOnClickListener);
@@ -110,6 +182,8 @@ public class KnowMoreActivity extends AppCompatActivity implements View.OnClickL
 
                     next = (TextView) findViewById(R.id.next_tv);
                     next.setOnClickListener(kOnClickListener);
+                    rturn = (TextView) findViewById(R.id.return_tv);
+                    rturn.setOnClickListener(rOnClickListener);
 
                     currentLayout = findViewById(R.id.km7);
                     currentLayout.setOnClickListener(kOnClickListener);
@@ -120,6 +194,8 @@ public class KnowMoreActivity extends AppCompatActivity implements View.OnClickL
 
                     next = (TextView) findViewById(R.id.next_tv);
                     next.setOnClickListener(kOnClickListener);
+                    rturn = (TextView) findViewById(R.id.return_tv);
+                    rturn.setOnClickListener(rOnClickListener);
 
                     currentLayout = findViewById(R.id.km8);
                     currentLayout.setOnClickListener(kOnClickListener);
@@ -130,6 +206,8 @@ public class KnowMoreActivity extends AppCompatActivity implements View.OnClickL
 
                     next = (TextView) findViewById(R.id.next_tv);
                     next.setOnClickListener(kOnClickListener);
+                    rturn = (TextView) findViewById(R.id.return_tv);
+                    rturn.setOnClickListener(rOnClickListener);
 
                     currentLayout = findViewById(R.id.km9);
                     currentLayout.setOnClickListener(kOnClickListener);

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PG</string>
+    <string name="app_name">PGx</string>
     <string name="poor_met">Poor Metabolizer</string>
     <string name="int_met">Intermediate Metabolizer</string>
     <string name="normal_met">Normal Metabolizer</string>
